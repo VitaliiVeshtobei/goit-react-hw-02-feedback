@@ -18,7 +18,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           <button
             type="button"
             onClick={() => {
-              onLeaveFeedback();
+              onLeaveFeedback(options[1]);
             }}
           >
             Neutral
@@ -28,7 +28,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           <button
             type="button"
             onClick={() => {
-              onLeaveFeedback();
+              onLeaveFeedback(options[2]);
             }}
           >
             Bad
