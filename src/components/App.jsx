@@ -1,8 +1,8 @@
 import React from 'react';
-import { Statistics } from './Statistics';
-import { FeedbackOptions } from './FeedbackOptions';
-import { Section } from './Section';
-
+import { Statistics } from './Statistics/Statistics';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Section } from './Section/Section';
+import { Notification } from './Notification/Notification';
 export class App extends React.Component {
   state = {
     good: 0,
@@ -32,8 +32,9 @@ export class App extends React.Component {
           options={Object.keys(this.state)}
           onLeaveFeedback={this.handleClick}
         />
-        {(!this.state.good && !this.state.neutral && !this.state.bad) !==
-          true && (
+        {!this.state.good && !this.state.neutral && !this.state.bad ? (
+          <Notification message="There is no feedback" />
+        ) : (
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}

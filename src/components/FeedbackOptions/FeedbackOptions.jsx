@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { ButtonList } from './FeedbackOptionsStyled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      <ul>
+      <ButtonList>
         <li>
           <button
             type="button"
@@ -34,7 +36,12 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             Bad
           </button>
         </li>
-      </ul>
+      </ButtonList>
     </>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array,
+  onLeaveFeedback: PropTypes.func,
 };
