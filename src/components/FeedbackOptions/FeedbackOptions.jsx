@@ -6,36 +6,20 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
       <ButtonList>
-        <li>
-          <button
-            type="button"
-            onClick={() => {
-              onLeaveFeedback(options[0]);
-            }}
-          >
-            Good
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            onClick={() => {
-              onLeaveFeedback(options[1]);
-            }}
-          >
-            Neutral
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            onClick={() => {
-              onLeaveFeedback(options[2]);
-            }}
-          >
-            Bad
-          </button>
-        </li>
+        {options.map((option, idx) => {
+          return (
+            <li key={idx}>
+              <button
+                type="button"
+                onClick={() => {
+                  onLeaveFeedback(option);
+                }}
+              >
+                Good
+              </button>
+            </li>
+          );
+        })}
       </ButtonList>
     </>
   );
